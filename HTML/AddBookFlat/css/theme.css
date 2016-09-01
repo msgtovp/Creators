@@ -1,0 +1,109 @@
+*, *:focus, *:hover {
+	outline: none;
+}
+body {
+	margin: 0;
+	font-family: Arial;
+}
+.navbar {
+	height: 70px;
+	background: #ecf0f1;
+	display: block;
+}
+.container {
+	margin: 0 auto;
+	width: 1024px;
+}
+.nav-items-holder {
+	width: 100%;
+	height: 70px;
+}
+.nav-items {
+	display: inline-block;
+	height: 50px;
+	padding: 10px;
+	float: left;
+}
+.nav-items:first-child {
+	width: 236px;
+}
+.nav-items:nth-child(2) {
+	width: 492px;
+}
+.nav-items:last-child {
+	width: 236px;
+}
+.nav-items:after {
+	clear: both;
+}
+.brand-icon {
+	display: block;
+	background: transparent url('../images/address-book.png') no-repeat left center;
+	padding: 11px 0 11px 40px;
+	text-decoration: none;
+	font-size: 24px;
+	color: #2c3e50;
+	background-size: 32px 32px;
+}
+.brand-icon:hover, .brand-icon:focus {
+	color:#2980b9;
+	background-image: url('../images/address-book-48.png');
+}
+.top-nav-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 50px;
+}
+.top-nav-menu li {
+	display: inline-block;
+	height: 50px;
+}
+.top-nav-menu li a {
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 0 5px;
+	display: block;
+	padding: 15px 5px;
+	color: #2c3e50;
+	transition: color 0.5s ease-in-out;
+	-webkit-transition: color 0.5s ease-in-out;
+	-o-transition: color 0.5s ease-in-out;
+	-moz-transition: color 0.5s ease-in-out;
+}
+.top-nav-menu li span {
+	width: 0px;
+	display: block;
+	height: 5px;
+	border-radius: 2px;
+	background-color: #2980b9;
+	transition: width 0.5s ease-in-out;
+	-webkit-transition: width 0.5s ease-in-out;
+	-o-transition: width 0.5s ease-in-out;
+	-moz-transition: width 0.5s ease-in-out;
+}
+.top-nav-menu li:hover span {
+	width: 100%;
+}
+.top-nav-menu li:hover a {
+	color: #2980b9;
+}
+.search-box {
+	padding: 10px 40px 10px 10px;
+	border: 0;
+	background: #ffffff url('../images/search.png') no-repeat right center;
+	background-size: 18px 18px;
+	background-position: 210px;
+	border-radius: 3px;
+	width: 236px;
+	display: block;
+	margin: 5px 0;
+	transition: box-shadow 0.5s ease-in-out;
+	-webkit-transition: box-shadow 0.5s ease-in-out;
+	-o-transition: box-shadow 0.5s ease-in-out;
+	-moz-transition: box-shadow 0.5s ease-in-out;
+}
+.search-box:hover, .search-box:focus {
+	box-shadow: 0 0 5px rgba(44, 62, 80, 0.1);
+}
