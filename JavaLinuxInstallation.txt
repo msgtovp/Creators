@@ -1,0 +1,9 @@
+Log terminal with super user
+
+mkdir /usr/local/java
+tar -xvzf jdk-8u101-linux-i586.tar.gz -C /usr/local/java
+update-alternatives --install /usr/bin/javac javac /usr/local/java/jdk1.8.0_101/bin/javac 1
+update-alternatives --install /usr/bin/java java /usr/local/java/jdk1.8.0_101/bin/java 1
+update-alternatives --install /usr/bin/jar jar /usr/local/java/jdk1.8.0_101/bin/jar 1
+java -version
+javac -version
