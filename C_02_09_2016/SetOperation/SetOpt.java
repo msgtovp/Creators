@@ -33,8 +33,11 @@ public class SetOpt<E> {
         this.set.add(e);
     }
     public SetOpt<E> union(SetOpt<E> b) {
-        SetOpt<E> tmp = this;
-        tmp.set.addAll(b.set);
+    	Set<E> copy1 = new TreeSet<E>(this.set);
+    	Set<E> copy2 = new TreeSet<E>(b.set);
+        SetOpt<E> tmp = new SetOpt<E>();
+        copy1.addAll(copy2);
+        tmp.set = copy1;
         return tmp;
     }
 	@Override
