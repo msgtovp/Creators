@@ -1,0 +1,75 @@
+{
+	"File": {
+		"New Tab": "Ctrl+T",
+		"New Window": "Ctrl+N",
+		"New Private Window": "Ctrl+Shift+P",
+		"Open File": "Ctrl+O",
+		"Close Tab": "Ctrl+W",
+		"Close Window": "Ctrl+Shift+P",
+		"Save Page As": "Ctrl+S",
+		"Email Link": "",
+		"Page Setup": "",
+		"Print Preview": "",
+		"Print": "Ctrl+P",
+		"Work Offline": "",
+		"Exit": ""
+	},
+	"Edit": {
+		"Undo": "Ctrl+Z",
+		"Redo": "Ctrl+Y",
+		"Cut": "Ctrl+X",
+		"Copy": "Ctrl+C",
+		"Paste": "Ctrl+V",
+		"Delete": "Del",
+		"Select All": "Ctrl+A",
+		"Find": "Ctrl+F",
+		"Find All": "Ctrl+G"
+	},
+	"View": {
+		"Toolbars": ["Menu Bar", "Bookmarks ToolBar", "Customize"],
+		"Sidebar": [{
+			"Bookmarks": "Ctrl+B"
+		}, {
+			"History": "Ctrl+H"
+		}],
+		"Zoom": [{
+			"Zoom In": "Ctrl++"
+		}, {
+			"Zoom Out": "Ctrl+-"
+		}, {
+			"Reset": "Ctrl+0"
+		}, "Zoom Text Only"],
+		"Page Style": ["No Style", "Basic Page Style"],
+		"Text Encoding": [{
+			"Auto-Detect": ["Off", "Japanese", "Russian", "Ukranian"]
+		}, "Unicode", "Western", "Arabic(Windows)", "Arabic(ISO)", "Baltic(Windows)", "Baltic(ISO)", "Central European(Windows)", "Central European(ISO)", "Chinese Siplified", "Chinese Traditional", "Cyrillic (Windows)", "Cyrillic (KO18-U)", "Cyrillic (KO18-R)", "Cyrillic (ISO)", "Cyrillic (DOS)", "Greek (Windows)", "Grrek (ISO)", "Hebrew, Visual", "Hebrew", "Japanese (Shift_JIS)", "Japanese (ISO_2022-JP)", "Japanese (EUC-JP)", "Korean", "Thai", "Turkish", "Vietnamese"],
+		"Full Screen": "F11",
+		"Firebug": "F12"
+	},
+	"History": {
+		"Show All History": "Ctrl+Shift+H",
+		"Clear Recent History": "Ctrl+Shift+Del",
+		"Restore Previous Session": "",
+		"Recently Closed Tabs": ""
+	},
+	"Tools": {
+		"Downloads": "Ctrl+J",
+		"Add-ons": "Ctrl+Shift+A",
+		"Apps": "",
+		"Sign In To Sync": "",
+		"Web Developer": [],
+		"Page Info": "",
+		"Options": ""
+	},
+	"Help": [
+		"Firefox Help",
+		"Firefox Tour",
+		"Keyboard Shortuts",
+		"Trobleshooting Information",
+		"Submit Feedback",
+		"Restart With Add-ons-Diasabled",
+		"Report Web Forgery",
+		"About Firefox"
+	]
+
+}
