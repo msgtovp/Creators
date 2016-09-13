@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>Contacts</title>
+<style type="text/css">
+.ctx {
+	width: 100px;
+	padding: 20px;
+	margin: 10px;
+	background: rgba(0, 0, 256, 0.1);
+	color: #888888;
+}
+</style>
+<script type="text/javascript">
+function myFunction() {
+	var elem = document.getElementById('imgClick');
+	elem.addEventListener("click", function() {
+		var clk = document.getElementById('ctxCount');
+		var cnt = clk.getAttribute("data-clicks");
+		clk.setAttribute("data-clicks", parseInt(cnt)+1);
+		clk.innerText = (parseInt(cnt)+1)+" Clicks";
+	});
+}
+window.addEventListener("load", myFunction);
+</script>
+</head>
+<body>
+<div>
+<img src="images/tiger.jpg" id="imgClick" />
+</div>
+<div class="ctx" id="ctxCount" data-clicks="0">
+0 Clicks
+</div>
+</body>
+</html>
