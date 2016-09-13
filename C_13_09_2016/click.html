@@ -4,15 +4,22 @@
 <title>Contacts</title>
 <style type="text/css">
 .ctx {
-	width: 100px;
+	width: 200px;
+	height: 250px;
 	padding: 20px;
+	border: 2px solid #888888;
 	margin: 10px;
 	background: rgba(0, 0, 256, 0.1);
 	color: #888888;
 }
+.ctx img {
+	width: 200px;
+	height: 200px;
+}
 </style>
 <script type="text/javascript">
 function myFunction() {
+
 	var elem = document.getElementById('imgClick');
 	elem.addEventListener("click", function() {
 		var clk = document.getElementById('ctxCount');
@@ -25,11 +32,9 @@ window.addEventListener("load", myFunction);
 </script>
 </head>
 <body>
-<div>
+<div class="ctx">
 <img src="images/tiger.jpg" id="imgClick" />
-</div>
-<div class="ctx" id="ctxCount" data-clicks="0">
-0 Clicks
+<span id="ctxCount" data-clicks="0">0 clicks</span>
 </div>
 </body>
 </html>
