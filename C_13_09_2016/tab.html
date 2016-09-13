@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<title>Contacts</title>
+<style type="text/css">
+	.ctx {
+		display: none;
+		padding: 20px;
+		margin: 10px;
+		background: rgba(0, 0, 256, 0.1);
+		color: #888888;
+	}
+</style>
+<script type="text/javascript">
+function resetDOM() {
+	var elem = document.getElementsByClassName('ctx');
+	for(var i = 0; i < elem.length; i ++) {
+		elem[i].style = 'display: none';
+	}
+}
+function myFunction() {
+	var elem = document.getElementsByClassName('menus');
+	for(var i = 0; i < elem.length; i ++) {
+		if(elem[i].addEventListener) {
+			elem[i].addEventListener("click", function(){
+				resetDOM();
+				document.getElementById(this.getAttribute('data-target')).style = 'display: block';
+			});
+		}
+	}
+}
+window.addEventListener("load", myFunction);
+</script>
+</head>
+<body>
+<div>
+<a class="menus" href="#" data-target="ctxInsert">Insert Form</a>
+<a class="menus" href="#" data-target="ctxUpdate">Update Form</a>
+<a class="menus" href="#" data-target="ctxDelete">Delete Form</a>
+</div>
+<div class="ctx" id="ctxInsert">
+Insert Form
+</div>
+<div class="ctx" id="ctxUpdate">
+Update Form
+</div>
+<div class="ctx" id="ctxDelete">
+Delete Form
+</div>
+</body>
+</html>
