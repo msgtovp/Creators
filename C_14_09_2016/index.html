@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<script type="text/javascript">
+function loadLogin() {
+	var elem = document.getElementById('btnlogin');
+	elem.addEventListener("click", function() {
+		var user = document.getElementById('user').value;
+		var pass = document.getElementById('pass').value;
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST","checklogin", true);
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr.send("username="+user+"&password="+pass+"");
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200) {
+				var d = JSON.parse(this.responseText);
+				document.getElementById("message").innerHTML = d.message;
+			}
+		};
+	});
+}
+window.addEventListener("load", loadLogin);
+</script>
+</head>
+<body>
+<input type="text" id="user" placeholder="username" />
+<input type="password" id="pass" placeholder="password" />
+<input type="submit" id="btnlogin" value = "Login" />
+<div id="message"></div>
+</body>
+</html>
