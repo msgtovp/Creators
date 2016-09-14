@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX Request</title>
+<script type="text/javascript">
+function loadData(datas) {
+	var strg = document.getElementById('data');
+	var str = '<table>\n';
+	datas = JSON.parse(datas);
+	for(var i = 0; i < datas.length; i++) {
+		console.log(datas[i]);
+		str += '<tr><td>'+datas[i].id+'</td><td>'+datas[i].username+'</td><td>'+datas[i].password+'</td></tr>\n'
+	}
+	str += '</table>\n';
+	console.log(str);
+	strg.innerHTML = str;
+}
+function addClickEvent() {
+	var btnElem = document.getElementById('btn');
+	btnElem.addEventListener('click', function(){
+		var xhr = new XMLHttpRequest();
+		xhr.open('get', 'render');
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200) {
+				loadData(this.responseText);
+			}
+		}
+	});
+}
+window.addEventListener('load', addClickEvent);
+</script>
+</head>
+<body>
+<button id="btn" >Get data using Ajax</button>
+<div id="data"></div>
+</body>
+</html>
