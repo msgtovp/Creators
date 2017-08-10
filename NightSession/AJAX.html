@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Request</title>
+	<script>
+	function ajaxreq() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("get","folderproperties.json");
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4) {
+				document.getElementById("data-holder").innerHTML = this.responseText;
+			}
+		};
+	}
+	window.addEventListener("load", function(){
+		document.getElementById("btnRequest").addEventListener("click", ajaxreq);
+	});
+	</script>
+</head>
+<body>
+<div><input type="button" id="btnRequest" value="Get JSON by AJAX" /></div>
+<div id="data-holder">
+</div>
+</body>
+</html>

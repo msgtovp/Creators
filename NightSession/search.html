@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Request</title>
+	<script>
+	var words = {};
+	function display() {
+		console.log(words);
+		var htm ="";
+		var key = document.getElementById('search').value;
+		for(var i = 0; i<words.length;i++){
+			if(words[i].startsWith(key)||words[i].endsWith(key)||words[i].indexOf(key) > -1) {
+				htm += "<div><b>"+words[i]+"</b></div>";
+			}
+		}
+		document.getElementById("data-holder").innerHTML = htm;
+	}
+	function ajaxreq() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("get","words.json");
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4) {
+				words = JSON.parse(this.responseText);
+				display();
+			}
+		};
+	}
+	window.addEventListener("load", function(){
+		document.getElementById("btnRequest").addEventListener("click", ajaxreq);
+	});
+	</script>
+</head>
+<body>
+<div><input type="text" id="search" /><input type="button" id="btnRequest" value="Search" /></div>
+<div id="data-holder">
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Request</title>
+	<script>
+	function ajaxreq() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("get","folderproperties.json");
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4) {
+				var str = "<table border=1>\n<tr><th>Username</th><th>Password</th></tr>\n";
+				var data = JSON.parse(this.responseText);
+				for(var i = 0; i < data.length; i++) {
+					str += "<tr><td>"+data[i].username+"</td><td>"+data[i].password+"</td></tr>\n";
+				}
+				str += "</table>\n";
+				document.getElementById("data-holder").innerHTML = str;
+			}
+		};
+	}
+	window.addEventListener("load", function(){
+		document.getElementById("btnRequest").addEventListener("click", ajaxreq);
+	});
+	</script>
+</head>
+<body>
+<div><input type="button" id="btnRequest" value="Get JSON by AJAX" /></div>
+<div id="data-holder">
+</div>
+</body>
+</html>

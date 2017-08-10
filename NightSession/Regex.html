@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Index Page</title>
+		<script type="text/javascript">
+			function getDetails() {
+				var user = document.getElementById("username").value;
+				var pass = document.getElementById("password").value;
+
+				if(user===""||pass==="") {
+					document.getElementById("info").innerText = "Username & Password cann't be empty..";
+					return false;
+				}
+				if(!/^[a-z]+$/.test(user)){
+					document.getElementById("info").innerText = "Username must be lowercase";
+					return false;	
+				}
+				if(user.length !== 8){
+					document.getElementById("info").innerText = "Username should be 8 char";
+					return false;	
+				}
+				if(pass.length !== 10){
+					document.getElementById("info").innerText = "PassWord should be 10 char";
+					return false;	
+				}
+				var gender = document.getElementsByName("gender");
+				var flag =false;
+				for(var i = 0; i<gender.length;i++) {
+					if(gender[i].checked)
+					 flag = true;
+				}
+				if(!flag) {
+					document.getElementById("info").innerText = "Please select gender..";
+					return false;
+				}
+				var skills = document.getElementsByName("skills");
+				flag = false;
+				for(var i = 0; i<skills.length;i++) {
+					if(skills[i].checked)
+					 flag = true;
+				}
+				if(!flag) {
+					document.getElementById("info").innerText = "Please select any skills..";
+					return false;
+				}
+				var str = "<p><b>Username : </b>"+user+"</p><p><b>Password : </b>"+pass+"</p>";
+				for(var i = 0; i < gender.length; i++) {
+					if(gender[i].checked)
+						str += "<p><b>Gender : </b>"+gender[i].value+"</p>"
+
+				}
+				for(var i = 0; i < skills.length; i++) {
+					if(skills[i].checked)
+						str += "<p><b>Skills : </b>"+skills[i].value+"</p>"
+
+				}
+				document.getElementById("info").innerHTML = str; 
+				return true;
+			}
+		</script>
+	</head>
+	<body>
+	<form action="save.jsp" onsubmit="return getDetails()" method="get">
+	<div>
+		<div>
+			<input type = "text" placeholder="Username here" id="username" name="username" />
+		</div>
+		<div>
+			<input type = "password" placeholder="Password here" id="password" name="password" />
+		</div>
+		<div>
+			<input type="radio" id="Male" name="gender" value="Male" />
+			<label for="Male">Male</label>
+			<input type="radio" id="Female" name="gender" value="Female" /> <label for="Female">Female</label>
+		</div>
+		<div>
+			<input type="checkbox" id="c" name="skills" value="c" />
+			<label for="c">C lang</label>
+			<input type="checkbox" id="cpp" name="skills" value="c++" /> 
+			<label for="cpp">C++ lang</label>
+		</div>
+		<div>
+			<input type="submit" value="Get User Info" id="btnGet" />
+		</div>
+		<div id="info"></div>
+	</div>
+	</form>
+	</body>
+</html>

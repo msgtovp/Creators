@@ -1,0 +1,5 @@
+create table user_info(firstname varchar(256), lastname varc
+har(256), phoneno varchar(256), primary key(phoneno));
+
+insert into user_info values('Steve','Jobs','8765432109'),('
+Vijay','Prakash','9876543210');

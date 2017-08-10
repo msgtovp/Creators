@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Index Page</title>
+		<script type="text/javascript">
+			function getDetails() {
+				var user = document.getElementById("username").value;
+				var pass = document.getElementById("password").value;
+				var gender = document.getElementsByName("gender");
+				var str = "<p><b>Username : </b>"+user+"</p><p><b>Password : </b>"+pass+"</p>";
+				for(var i = 0; i < gender.length; i++) {
+					if(gender[i].checked)
+						str += "<p><b>Gender : </b>"+gender[i].value+"</p>"
+				}
+				document.getElementById("info").innerHTML = str; 
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+	<form action="save.jsp" onsubmit="return getDetails()" method="post">
+	<div>
+		<div>
+			<input type = "text" id="username" name="username" />
+		</div>
+		<div>
+			<input type = "password" id="password" name="password" />
+		</div>
+		<div>
+			<input type="radio" name="gender" value="Male" />Male &nbsp;&nbsp;&nbsp;
+			<input type="radio" name="gender" value="Female" /> Female
+		</div>
+		<div>
+			<input type="submit" value="Get User Info" id="btnGet" />
+		</div>
+		<div id="info"></div>
+	</div>
+	</form>
+	</body>
+</html>
